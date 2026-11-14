@@ -1,0 +1,11 @@
+<!doctype html><meta charset="utf-8"><style>
+body{font-family:sans-serif;background:#20252b;color:#fff;margin:0;padding:18px;font-size:22px}
+h1{font-size:28px;margin:0 0 16px}p{color:#cbd5df;margin:8px 0 18px}
+button{display:block;width:100%;margin:10px 0;padding:14px;border:0;border-radius:7px;background:#2fc3e8;color:#061218;font-size:22px}
+button.back{background:#566473;color:white}
+</style><h1 id="title"></h1><p id="message"></p><main id="buttons"></main><script>
+(function(){function send(action,value){if(window.EventBridge)EventBridge.emitWebEvent(JSON.stringify({action:action,value:value,token:data.token}));}
+var raw=decodeURIComponent(location.hash.slice(1)||'%7B%7D'),data;try{data=JSON.parse(raw)}catch(e){data={}}
+document.getElementById('title').textContent=data.title||'Dance Ball V3';document.getElementById('message').textContent=data.message||'';
+(data.buttons||[]).forEach(function(b){var x=document.createElement('button');x.textContent=b.label;x.className=b.back?'back':'';x.onclick=function(){send(b.action||'select',b.value)};document.getElementById('buttons').appendChild(x)}); }());
+</script>
