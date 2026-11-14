@@ -43,6 +43,8 @@ Tests create original synthetic inputs in temporary folders. They do not require
 
 The runtime is derived from a locally live-tested V3 release, including two viewers on one PC. This source distribution has automated empty-build and synthetic-package checks. New user assets, custom avatars and remote network timing need their own live checks; simulation is not a visual dance test.
 
+See [recorded validation](docs/VALIDATION.md) for the fresh-clone and Blender checks.
+
 ## Licence and contributions
 
 Project code is under the [MIT licence](LICENSE). Third-party animation data, reference rigs and separately installed dependencies retain their own licences. In particular, DD100 is offered under S-Lab 1.0 for non-commercial use under its conditions; this project's MIT licence does not change that.

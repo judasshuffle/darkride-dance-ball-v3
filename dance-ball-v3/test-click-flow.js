@@ -18,7 +18,7 @@ entities.set('launcher',{userData:JSON.stringify({danceBallV3:{version:3,release
 const state=()=>published.state.sessions;
 function environment(id,tabletMode=false){
  const mouse=signal(),clickSignal=signal(),received=signal(),update=signal(),domainChanged=signal(),intervals=[],overlays=new Map(),logs=[],sent=[],local=new Map(),resources=[],tabletEvents=signal(),screens=[];
- const avatar={sessionUUID:{toString:()=>id},displayName:'Judas',position:{x:10+clients.length*10,y:1,z:10},orientation:yaw(0),scale:id==='C'?1.25:1,collisionsEnabled:true,getHeight:()=>env.height*avatar.scale,
+ const avatar={sessionUUID:{toString:()=>id},displayName:'Same display name',position:{x:10+clients.length*10,y:1,z:10},orientation:yaw(0),scale:id==='C'?1.25:1,collisionsEnabled:true,getHeight:()=>env.height*avatar.scale,
   getJointIndex:()=>0,getAbsoluteDefaultJointTranslationInObjectFrame:()=>env.hips||({x:0,y:1,z:0}),getJointRotations:()=>[yaw(0)],setJointRotations:()=>{throw Error('World scripts must use native playback');},clearJointsData:()=>avatar.cleared++,restoreAnimation:()=>avatar.restored++,overrideAnimation:(...a)=>{avatar.animation=a;avatar.animationAt=now;},cleared:0,restored:0};
  const original=clone({position:avatar.position,orientation:avatar.orientation,scale:avatar.scale,collisionsEnabled:avatar.collisionsEnabled});
  const api={Date:{now:()=>now},print:s=>logs.push(s),MyAvatar:avatar,Vec3:{sum,subtract:sub,multiply:(n,v)=>({x:n*v.x,y:n*v.y,z:n*v.z}),multiplyQbyV:rotate},
